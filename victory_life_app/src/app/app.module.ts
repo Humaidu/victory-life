@@ -13,6 +13,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
     CarouselModule.forRoot(),
   ],
   providers: [],

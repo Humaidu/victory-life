@@ -10,3 +10,5 @@ body {
  --secondary-color: #32383a;
  --tertiary-color: #F4F5F5;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

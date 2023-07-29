@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -23,14 +23,37 @@ export class ProjectsComponent implements OnInit {
     'assets/build_const.jpeg',
   ];
 
-  selectedImage: string = '';
+  currentIndex = 0;
 
-  showImagePreview(image: string) {
-    this.selectedImage = image;
+  @ViewChild('galleryContainer') galleryContainer!: ElementRef ;
+
+  showPreview(index: number): void {
+    this.currentIndex = index;
   }
 
-  closeImagePreview() {
-    this.selectedImage = '';
+  next(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.slideGallery('next');
+  }
+
+  prev(): void {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.images.length) % this.images.length;
+    this.slideGallery('prev');
+  }
+
+  private slideGallery(direction: 'next' | 'prev'): void {
+    const galleryWidth = this.galleryContainer.nativeElement.offsetWidth;
+    const distance = direction === 'next' ? -galleryWidth : galleryWidth;
+
+    this.galleryContainer.nativeElement.style.transition =
+      'transform 0.3s ease-in-out';
+    this.galleryContainer.nativeElement.style.transform = `translateX(${distance}px)`;
+
+    setTimeout(() => {
+      this.galleryContainer.nativeElement.style.transition = 'none';
+      this.galleryContainer.nativeElement.style.transform = 'translateX(0)';
+    }, 300);
   }
 
   constructor() {}
