@@ -7,11 +7,12 @@
       (click)="showPreview(i)"
     >
       <img
-        src="{{ image }}"
+        src="{{ image.src }}"
         style="height: 200px; width: 300px"
         class="image-fluid g-image mt-2"
         alt="Image {{ i + 1 }}"
       />
+      <div class="caption text-center text-info">{{ image.caption }}</div>
     </div>
   </div>
 
@@ -26,9 +27,13 @@
       </button>
     </div>
     <img
-      src="{{ images[currentIndex] }}"
+      src="{{ images[currentIndex].src }}"
       class="image-fluid"
       alt="Preview Image"
     />
+    <div class="caption">{{ images[currentIndex].caption }}</div>
+  <button mat-icon-button class="close-icon" (click)="showPreview(-1)">
+    <mat-icon>close</mat-icon>
+  </button>
   </div>
 </div>

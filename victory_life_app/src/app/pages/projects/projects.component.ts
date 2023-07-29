@@ -7,20 +7,20 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
   images = [
-    'assets/pool1.jpeg',
-    'assets/pool2.jpeg',
-    'assets/pool5.jpeg',
-    'assets/pool6.jpeg',
+    { src: 'assets/pool1.jpeg', caption: 'Swimming Pool'},
+    { src: 'assets/pool2.jpeg', caption: 'Swimming Pool'},
+    { src: 'assets/pool5.jpeg', caption: 'Swimming Pool'},
+    { src:  'assets/pool6.jpeg', caption: 'Swimming Pool'},
 
-    'assets/pool_const.jpeg',
-    'assets/pool3.jpeg',
-    'assets/pool_plan.jpeg',
-    'assets/land.jpeg',
+    { src: 'assets/pool_const.jpeg', caption: 'Swimming Pool Construction'},
+    { src: 'assets/pool3.jpeg', caption: 'Swimming Pool'},
+    { src: 'assets/pool_plan.jpeg', caption: 'Swimming Pool planning'},
+    { src: 'assets/land.jpeg', caption: 'Land Surveying'},
 
-    'assets/build1.jpeg',
-    'assets/build2.jpeg',
-    'assets/build_plan.jpeg',
-    'assets/build_const.jpeg',
+    { src: 'assets/build1.jpeg', caption: 'Building Construction'},
+    { src: 'assets/build2.jpeg', caption: 'Building Construction'},
+    { src: 'assets/build_plan.jpeg', caption: 'Building Planning'},
+    { src: 'assets/build_const.jpeg', caption: 'Building Construction'},
   ];
 
   currentIndex = 0;
