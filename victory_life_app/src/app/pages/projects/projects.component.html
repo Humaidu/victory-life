@@ -1,1 +1,19 @@
-<p>projects works!</p>
+<div class="container">
+  <h2 class="mt-2 text-center">Projects</h2>
+  <div class="row image-gallery mt-3">
+    <div class="image-item col-md-3 mt-2" *ngFor="let image of images">
+      <img
+        [src]="image"
+        style="height: 200px; width: 300px"
+        class="g-image image-fluid mt-2"
+        (click)="showImagePreview(image)"
+        alt="Image"
+      />
+    </div>
+  </div>
+
+  <div class="image-preview" *ngIf="selectedImage">
+    <div class="overlay" (click)="closeImagePreview()"></div>
+    <img [src]="selectedImage" alt="Image Preview" />
+  </div>
+</div>

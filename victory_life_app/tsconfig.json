@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -20,10 +21,7 @@
     "module": "ES2022",
     "esModuleInterop": true,
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -31,7 +29,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
     "allowSyntheticDefaultImports": true
-   
-
   }
 }

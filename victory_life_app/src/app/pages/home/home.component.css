@@ -163,7 +163,7 @@ p {
 
 @media screen and (max-width: 480px) {
   .services {
-    min-height: 300vh;
+    min-height: 380vh;
   }
 }
 
@@ -172,7 +172,7 @@ p {
 .container {
   margin: 100px auto;
   width: 90vw;
-  height: 380px;
+  height: auto;
   background: rgb(255, 255, 255);
   display: flex;
   padding: 10px;
@@ -205,23 +205,48 @@ p {
 .body_txt p {
   margin: 18px 0;
 }
-.subs input[type="email"] {
+.subs input[type="text"] {
   background: rgb(251 251 251);
   border: 2px solid rgb(150, 150, 150);
   outline: none;
   width: 85%;
   padding: 10px;
   font-size: 16px;
-  height: 55px;
+  height: 50px;
   border-radius: 0.5rem;
   transition: 0.12s;
 }
-.subs input[type="email"]:focus {
+.subs textarea {
+    background: rgb(251 251 251);
+    border: 2px solid rgb(150, 150, 150);
+    outline: none;
+    width: 85%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    transition: 0.12s;
+  }
+  @media screen and (max-width: 480px) {
+    input[type="text"], button {
+      min-width: 100%;
+      height: 45px;
+    }
+
+    textarea {
+      min-width: 100%;
+    }
+
+    .body_txt h1 {
+        font-size: 1.5vw;
+        line-height: 3vw;
+      }
+  }
+.subs input[type="text"]:focus {
   border: 2px solid var(--primary-color);
 }
 .subs button {
   width: 85%;
-  height: 55px;
+  height: 50px;
   padding: 10px;
   margin-top: 17px;
   background: var(--primary-color);
@@ -276,5 +301,3 @@ p {
     width: 90%;
   }
 }
-
-
