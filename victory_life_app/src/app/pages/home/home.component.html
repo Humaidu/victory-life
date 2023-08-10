@@ -132,6 +132,43 @@
     </div>
   </div>
 
+  <!-- choose us section -->
+  <div class="choose" id="choose_us">
+    <div class="image">
+      <img
+        src="assets/pool2.jpeg"
+        class="img-fluid"
+        alt="about"
+        style="height: 400px; width: 500px"
+      />
+    </div>
+    <div class="info">
+      <div class="header">
+        <h2>WHY CHOOSE US?</h2>
+      </div>
+      <div
+        class="toggle-header"
+        *ngFor="let item of accordionItems; let i = index"
+        (click)="toggleContent(i)"
+      >
+        <h5>{{ item.headerText }}</h5>
+        <span
+          class="arrow-icon"
+          [ngClass]="{ up: item.isExpanded, down: !item.isExpanded }"
+        ></span>
+      </div>
+      <div
+        class="toggle-content"
+        *ngFor="let item of accordionItems; let i = index"
+        [class.show]="item.isExpanded"
+      >
+        <p>
+          {{ item.content }}
+        </p>
+      </div>
+    </div>
+  </div>
+
   <!-- Contact Us Section -->
   <div class="contact" id="contact">
     <div class="container">
@@ -191,16 +228,16 @@
             </div>
 
             <div *ngIf="getFormControl['phoneNumber'].errors?.['pattern']">
-                <div
-                  class="text-danger"
-                  *ngIf="
-                    getFormControl['phoneNumber'].touched &&
-                    getFormControl['phoneNumber'].invalid
-                  "
-                >
-                  Input number Must be a phone number!!!
-                </div>
+              <div
+                class="text-danger"
+                *ngIf="
+                  getFormControl['phoneNumber'].touched &&
+                  getFormControl['phoneNumber'].invalid
+                "
+              >
+                Input number Must be a phone number!!!
               </div>
+            </div>
 
             <div *ngIf="getFormControl['phoneNumber'].errors?.['minlength']">
               <div

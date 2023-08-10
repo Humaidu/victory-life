@@ -13,8 +13,53 @@ export class HomeComponent implements OnInit {
   fullname: string = '';
   phone: string = '';
   message: string = '';
+  iconClass: string = 'arrow-down';
+
+  accordionItems = [
+    {
+      headerText: 'Trending Designs',
+      content:
+        'Trending ipsum dolor sit amet consectetur adipisicing elit. Neque iureadipisci nulla nostrum ut qui odit tempora porro, aspernatur asperiores totam perspiciatis eligendi aperiam deserunt distinctio quaerat eos laboriosam ratione.',
+      isExpanded: false,
+    },
+    {
+      headerText: 'Professional Team',
+      content:
+        'Professional ipsum dolor sit amet consectetur adipisicing elit. Neque iureadipisci nulla nostrum ut qui odit tempora porro, aspernatur asperiores totam perspiciatis eligendi aperiam deserunt distinctio quaerat eos laboriosam ratione.',
+      isExpanded: false,
+    },
+    {
+      headerText: 'Values',
+      content:
+        'Values ipsum dolor sit amet consectetur adipisicing elit. Neque iureadipisci nulla nostrum ut qui odit tempora porro, aspernatur asperiores totam perspiciatis eligendi aperiam deserunt distinctio quaerat eos laboriosam ratione.',
+      isExpanded: false,
+    },
+    {
+      headerText: 'Comprehensive Services',
+      content:
+        'Comprehensive Service ipsum dolor sit amet consectetur adipisicing elit. Neque iureadipisci nulla nostrum ut qui odit tempora porro, aspernatur asperiores totam perspiciatis eligendi aperiam deserunt distinctio quaerat eos laboriosam ratione.',
+      isExpanded: false,
+    },
+    {
+      headerText: 'Warranty',
+      content:
+        'Warranty ipsum dolor sit amet consectetur adipisicing elit. Neque iureadipisci nulla nostrum ut qui odit tempora porro, aspernatur asperiores totam perspiciatis eligendi aperiam deserunt distinctio quaerat eos laboriosam ratione.',
+      isExpanded: false,
+    },
+    // Add more items as needed
+  ];
 
   constructor(private fb: FormBuilder, private apiService: ApiService) {}
+
+  toggleContent(index: number) {
+    this.accordionItems.forEach((item, i) => {
+      if (i === index) {
+        item.isExpanded = !item.isExpanded;
+      } else {
+        item.isExpanded = false;
+      }
+    });
+  }
 
   messageForm = this.fb.group({
     fullName: ['', Validators.required],
@@ -30,12 +75,11 @@ export class HomeComponent implements OnInit {
     message: ['', Validators.required],
   });
 
-  get getFormControl(){
-    return this.messageForm.controls
+  get getFormControl() {
+    return this.messageForm.controls;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     this.fullname = this.messageForm.value.fullName!;
@@ -46,7 +90,7 @@ export class HomeComponent implements OnInit {
     const mesageData: MessageData = {
       sender: 'vicLife',
       message: this.message,
-      phone_numbers: ['233554896353'],
+      phone_numbers: ['233249643365'],
     };
     console.log(this.message);
 
