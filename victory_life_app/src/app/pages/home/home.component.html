@@ -157,17 +157,39 @@
           [ngClass]="{ up: item.isExpanded, down: !item.isExpanded }"
         ></span>
       </div>
-      <div
-        class="toggle-content"
-        *ngFor="let item of accordionItems; let i = index"
-        [class.show]="item.isExpanded"
-      >
+      <div *ngFor="let item of accordionItems; let i = index">
+      <div class="toggle-content" [class.show]="item.isExpanded">
         <p>
           {{ item.content }}
         </p>
       </div>
+        
+      </div>
     </div>
   </div>
+   <!-- mission section -->
+   <div class="mission">
+    <div class="header">
+      <h2>We guarantee you premium service for every project</h2>
+    </div>
+    <div class="row statement">
+      <div class="col-md-4 col-sm-4">
+        <h1>01. MISSION</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequuntur amet minus sed tempora nam dignissimos assumenda debitis culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos consequatur doloremque repellendus exercitationem.</p>
+      </div>
+
+      <div class="col-md-4 col-sm-4">
+        <h1>02. VISSION</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequuntur amet minus sed tempora nam dignissimos assumenda debitis culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos consequatur doloremque repellendus exercitationem.</p>
+      </div>
+
+      <div class="col-md-4 col-sm-4">
+        <h1>03. VALUE</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequuntur amet minus sed tempora nam dignissimos assumenda debitis culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos consequatur doloremque repellendus exercitationem.</p>
+      </div>
+
+    </div>
+   </div>
 
   <!-- Contact Us Section -->
   <div class="contact" id="contact">
@@ -176,7 +198,8 @@
         <img src="assets/subscribe.svg" alt="subscribe" />
       </div>
       <div class="body_txt">
-        <h1>Send Your Messages to VictoryLife</h1>
+        <h1>GET IN TOUCH</h1>
+        <h2>Send Your Messages to VictoryLife</h2>
         <div class="subs mt-2">
           <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
             <input

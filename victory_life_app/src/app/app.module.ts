@@ -15,6 +15,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     AboutUsComponent,
     ContactUsComponent,
     ProjectsComponent,
+    ScrollAnimationDirective,
   ],
   imports: [
     BrowserModule,
