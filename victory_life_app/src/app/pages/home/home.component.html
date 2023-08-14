@@ -6,7 +6,7 @@
       <h2 class="section-heading">Our Services</h2>
     </div>
     <div class="row crds">
-      <div class="column crd">
+      <div class="column crd fade-in">
         <div class="card">
           <div class="image-wrapper">
             <img
@@ -22,7 +22,7 @@
           </p>
         </div>
       </div>
-      <div class="column crd">
+      <div class="column crd fade-in">
         <div class="card">
           <div class="image-wrapper">
             <img
@@ -38,7 +38,7 @@
           </p>
         </div>
       </div>
-      <div class="column crd">
+      <div class="column crd fade-in">
         <div class="card">
           <div class="image-wrapper">
             <img
@@ -54,7 +54,7 @@
           </p>
         </div>
       </div>
-      <div class="column crd">
+      <div class="column crd fade-in">
         <div class="card">
           <div class="image-wrapper">
             <img
@@ -70,7 +70,7 @@
           </p>
         </div>
       </div>
-      <div class="column crd">
+      <div class="column crd fade-in">
         <div class="card">
           <div class="image-wrapper">
             <img
@@ -86,7 +86,7 @@
           </p>
         </div>
       </div>
-      <div class="column crd">
+      <div class="column crd fade-in">
         <div class="card">
           <div class="image-wrapper">
             <img
@@ -109,10 +109,10 @@
   <div class="project"></div>
 
   <!-- About Section -->
-  <div class="about" id="about_us">
+  <div class="about animate" id="about_us">
     <div class="info">
-      <h2>About Us</h2>
-      <p>
+      <h2 class="fade-in">About Us</h2>
+      <p class="slide-in left">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis,
         doloremque? Quam rem unde provident, iste qui doloribus. Itaque,
         deserunt, beatae recusandae ipsum maxime nemo quasi ut corporis officiis
@@ -122,7 +122,7 @@
         omnis consectetur.
       </p>
     </div>
-    <div class="image">
+    <div class="image slide-in right">
       <img
         src="assets/pool6.jpeg"
         class="img-fluid"
@@ -133,8 +133,8 @@
   </div>
 
   <!-- choose us section -->
-  <div class="choose" id="choose_us">
-    <div class="image">
+  <div class="choose animate" id="choose_us">
+    <div class="image slide-in left">
       <img
         src="assets/pool2.jpeg"
         class="img-fluid"
@@ -143,63 +143,80 @@
       />
     </div>
     <div class="info">
-      <div class="header">
+      <div class="header fade-in">
         <h2>WHY CHOOSE US?</h2>
       </div>
-      <div
-        class="toggle-header"
-        *ngFor="let item of accordionItems; let i = index"
-        (click)="toggleContent(i)"
-      >
-        <h5>{{ item.headerText }}</h5>
-        <span
-          class="arrow-icon"
-          [ngClass]="{ up: item.isExpanded, down: !item.isExpanded }"
-        ></span>
-      </div>
-      <div *ngFor="let item of accordionItems; let i = index">
-      <div class="toggle-content" [class.show]="item.isExpanded">
-        <p>
-          {{ item.content }}
-        </p>
-      </div>
-        
+      <div class="slide-in right">
+        <div
+          class="toggle-header"
+          *ngFor="let item of accordionItems; let i = index"
+          (click)="toggleContent(i)"
+        >
+          <h5>{{ item.headerText }}</h5>
+          <span
+            class="arrow-icon"
+            [ngClass]="{ up: item.isExpanded, down: !item.isExpanded }"
+          ></span>
+        </div>
+        <div *ngFor="let item of accordionItems; let i = index">
+          <div class="toggle-content" [class.show]="item.isExpanded">
+            <p>
+              {{ item.content }}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-   <!-- mission section -->
-   <div class="mission">
-    <div class="header">
+  <!-- mission section -->
+  <div class="mission animate">
+    <div class="header fade-in">
       <h2>We guarantee you premium service for every project</h2>
     </div>
     <div class="row statement">
-      <div class="col-md-4 col-sm-4">
+      <div class="col-md-4 col-sm-4 slide-in left">
         <h1>01. MISSION</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequuntur amet minus sed tempora nam dignissimos assumenda debitis culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos consequatur doloremque repellendus exercitationem.</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
+          consequuntur amet minus sed tempora nam dignissimos assumenda debitis
+          culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos
+          consequatur doloremque repellendus exercitationem.
+        </p>
       </div>
 
-      <div class="col-md-4 col-sm-4">
+      <div class="col-md-4 col-sm-4 fade-in">
         <h1>02. VISSION</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequuntur amet minus sed tempora nam dignissimos assumenda debitis culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos consequatur doloremque repellendus exercitationem.</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
+          consequuntur amet minus sed tempora nam dignissimos assumenda debitis
+          culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos
+          consequatur doloremque repellendus exercitationem.
+        </p>
       </div>
 
-      <div class="col-md-4 col-sm-4">
+      <div class="col-md-4 col-sm-4 slide-in right">
         <h1>03. VALUE</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequuntur amet minus sed tempora nam dignissimos assumenda debitis culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos consequatur doloremque repellendus exercitationem.</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
+          consequuntur amet minus sed tempora nam dignissimos assumenda debitis
+          culpa molestias? Alias, ut placeat necessitatibus beatae dignissimos
+          consequatur doloremque repellendus exercitationem.
+        </p>
       </div>
-
     </div>
-   </div>
+  </div>
 
   <!-- Contact Us Section -->
   <div class="contact" id="contact">
     <div class="container">
-      <div class="img">
+      <div class="img slide-in left">
         <img src="assets/subscribe.svg" alt="subscribe" />
       </div>
       <div class="body_txt">
-        <h1>GET IN TOUCH</h1>
-        <h2>Send Your Messages to VictoryLife</h2>
+        <div class="slide-in right">
+          <h1>GET IN TOUCH</h1>
+          <h2>Send Your Messages to VictoryLife</h2>
+        </div>
         <div class="subs mt-2">
           <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
             <input

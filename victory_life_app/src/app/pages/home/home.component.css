@@ -64,10 +64,9 @@
   }
 }
 
-
 /* why choose us css */
 
-.toggle-header{
+.toggle-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,28 +74,26 @@
   margin-bottom: 10px;
 }
 
-.toggle-content{
+.toggle-content {
   max-height: 0;
   overflow: hidden;
 }
 
-.toggle-content.show{
+.toggle-content.show {
   max-height: 500px;
 }
-.arrow-icon{
+.arrow-icon {
   width: 12px;
   height: 12px;
-  background-image: url('../../../assets/down-arrow.png');
+  background-image: url("../../../assets/down-arrow.png");
   background-size: cover;
   transition: 0.3s;
   position: relative;
   right: 37px;
 }
-.arrow-icon.up{
+.arrow-icon.up {
   transform: rotate(180deg);
 }
-
-
 
 .choose {
   display: grid;
@@ -112,7 +109,7 @@
   font-style: 500;
 }
 
-.header{
+.header {
   margin-bottom: 30px;
 }
 
@@ -162,7 +159,7 @@
   }
 }
 /* mission css */
-.mission{
+.mission {
   margin-top: 200px;
   display: flex;
   flex-direction: column;
@@ -170,18 +167,48 @@
   text-align: left;
   width: 90%;
   margin-left: 80px;
-  
 }
 
-.header h2{
+.header h2 {
   font-size: 50px;
   margin-bottom: 40px;
 }
 
-.statement .col-md-4 h1{
+.statement .col-md-4 h1 {
   color: var(--primary-color);
   margin-bottom: 30px;
 }
+
+@media screen and (max-width: 480px) {
+  .mission {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .header h2 {
+    font-size: 40px;
+  }
+
+  .statement .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mission {
+    width: 90%;
+    margin-left: 20px;
+  }
+
+  .header h2 {
+    font-size: 45px;
+  }
+
+  .statement .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
+
 /* services css */
 .services {
   height: 130vh;
@@ -321,7 +348,7 @@ p {
   font-size: 2vw;
   line-height: 3vw;
 }
-.body_txt h1{
+.body_txt h1 {
   color: var(--primary-color);
 }
 .body_txt p {
@@ -339,30 +366,31 @@ p {
   transition: 0.12s;
 }
 .subs textarea {
-    background: rgb(251 251 251);
-    border: 2px solid rgb(150, 150, 150);
-    outline: none;
-    width: 85%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 0.5rem;
-    transition: 0.12s;
+  background: rgb(251 251 251);
+  border: 2px solid rgb(150, 150, 150);
+  outline: none;
+  width: 85%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  transition: 0.12s;
+}
+@media screen and (max-width: 480px) {
+  input[type="text"],
+  button {
+    min-width: 100%;
+    height: 45px;
   }
-  @media screen and (max-width: 480px) {
-    input[type="text"], button {
-      min-width: 100%;
-      height: 45px;
-    }
 
-    textarea {
-      min-width: 100%;
-    }
-
-    .body_txt h1 {
-        font-size: 1.5vw;
-        line-height: 3vw;
-      }
+  textarea {
+    min-width: 100%;
   }
+
+  .body_txt h1 {
+    font-size: 1.5vw;
+    line-height: 3vw;
+  }
+}
 .subs input[type="text"]:focus {
   border: 2px solid var(--primary-color);
 }
@@ -422,4 +450,33 @@ p {
   .container .subs button {
     width: 90%;
   }
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+.left {
+  transform: translateX(-50%);
+}
+
+.right {
+  transform: translateX(50%);
+}
+
+.left,
+.right {
+  transition: transform 400ms ease-in;
+  opacity: 0;
+}
+
+.left.appear,
+.right.appear {
+  transform: translateX(0%);
+  opacity: 1;
 }

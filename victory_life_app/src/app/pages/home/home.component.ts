@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
     // Add more items as needed
   ];
 
-  constructor(private fb: FormBuilder, private apiService: ApiService) {}
+  constructor(private fb: FormBuilder, private apiService: ApiService, private elementRef: ElementRef) {}
 
   toggleContent(index: number) {
     this.accordionItems.forEach((item, i) => {
@@ -79,7 +79,36 @@ export class HomeComponent implements OnInit {
     return this.messageForm.controls;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const faders = document.querySelectorAll('.fade-in')!;
+    const sliders = document.querySelectorAll('.slide-in')!;
+
+    const options = {
+      root: null,
+      threshold: 0,
+      rootMargin: '0px 0px -250px 0px'
+    }
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => { 
+        if (!entry.isIntersecting){
+          return;
+        }else{
+          entry.target.classList.add("appear");
+          observer.unobserve(entry.target);
+
+        }
+      })
+    }, options);
+
+    faders.forEach((fade) => {
+      observer.observe(fade)
+    })
+
+    sliders.forEach((slider) => {
+      observer.observe(slider);
+    });
+    
+  }
 
   onSubmit() {
     this.fullname = this.messageForm.value.fullName!;
