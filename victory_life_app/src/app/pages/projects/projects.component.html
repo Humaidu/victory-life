@@ -1,39 +1,19 @@
 <div class="container">
-  <h2 class="mt-2 text-center">Some of Our Projects</h2>
+  <h2 class="mt-2 text-center">SOME OF OUR PROJECTS</h2>
   <div class="row gallery-container mt-3 mb-3" #galleryContainer>
     <div
       *ngFor="let image of images; let i = index"
-      class="gallery-item col-md-3 mt-2"
-      (click)="showPreview(i)"
+      class="gallery-item col-md-4 col-sm-4"
     >
       <img
         src="{{ image.src }}"
-        style="height: 200px; width: 300px"
-        class="image-fluid g-image mt-2"
+        style="height: 300px"
+        class="image-fluid g-image"
         alt="Image {{ i + 1 }}"
       />
-      <div class="caption text-center text-info">{{ image.caption }}</div>
+      <div class="caption text-center txt-info mt-4"><span class="project">Project: </span>{{ image.project }}</div>
+      <div class="caption text-center txt-info mt-2"><span class="location">Location: </span>{{ image.location }}</div>
     </div>
   </div>
 
-  <div *ngIf="images[currentIndex]" class="image-preview">
-    <div class="preview-overlay" (click)="showPreview(-1)"></div>
-    <div class="arrows">
-      <button mat-icon-button (click)="prev()">
-        <mat-icon class="icon-size">keyboard_arrow_left</mat-icon>
-      </button>
-      <button mat-icon-button (click)="next()">
-        <mat-icon class="icon-size">keyboard_arrow_right</mat-icon>
-      </button>
-    </div>
-    <img
-      src="{{ images[currentIndex].src }}"
-      class="image-fluid"
-      alt="Preview Image"
-    />
-    <div class="caption">{{ images[currentIndex].caption }}</div>
-  <button mat-icon-button class="close-icon" (click)="showPreview(-1)">
-    <mat-icon>close</mat-icon>
-  </button>
-  </div>
 </div>

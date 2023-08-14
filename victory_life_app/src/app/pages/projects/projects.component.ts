@@ -7,20 +7,20 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
   images = [
-    { src: 'assets/pool1.jpeg', caption: 'Swimming Pool'},
-    { src: 'assets/pool2.jpeg', caption: 'Swimming Pool'},
-    { src: 'assets/pool5.jpeg', caption: 'Swimming Pool'},
-    { src:  'assets/pool6.jpeg', caption: 'Swimming Pool'},
+    { src: 'assets/pool1.jpeg', project: 'Swimming Pool', location: 'Accra'},
+    { src: 'assets/pool2.jpeg', project: 'Swimming Pool', location: 'Accra'},
+    { src: 'assets/pool5.jpeg', project: 'Swimming Pool', location: 'Accra'},
+    { src:  'assets/pool6.jpeg', project: 'Swimming Pool', location: 'Kumasi'},
 
-    { src: 'assets/pool_const.jpeg', caption: 'Swimming Pool Construction'},
-    { src: 'assets/pool3.jpeg', caption: 'Swimming Pool'},
-    { src: 'assets/pool_plan.jpeg', caption: 'Swimming Pool planning'},
-    { src: 'assets/land.jpeg', caption: 'Land Surveying'},
+    { src: 'assets/pool_const.jpeg', project: 'Swimming Pool Construction', location: 'Accra'},
+    { src: 'assets/pool3.jpeg', project: 'Swimming Pool'},
+    { src: 'assets/pool_plan.jpeg', project: 'Swimming Pool planning', location: 'Cape Coast'},
+    { src: 'assets/land.jpeg', project: 'Land Surveying', location: 'Accra'},
 
-    { src: 'assets/build1.jpeg', caption: 'Building Construction'},
-    { src: 'assets/build2.jpeg', caption: 'Building Construction'},
-    { src: 'assets/build_plan.jpeg', caption: 'Building Planning'},
-    { src: 'assets/build_const.jpeg', caption: 'Building Construction'},
+    { src: 'assets/build1.jpeg', project: 'Building Construction', location: 'Accra'},
+    { src: 'assets/build2.jpeg', project: 'Building Construction', location: 'Tamale'},
+    { src: 'assets/build_plan.jpeg', project: 'Building Planning', location: 'Accra'},
+    { src: 'assets/build_const.jpeg', project: 'Building Construction', location: 'Kumasi'},
   ];
 
   currentIndex = 0;
